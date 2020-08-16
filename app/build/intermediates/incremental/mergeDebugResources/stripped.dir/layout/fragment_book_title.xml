@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+                                                  
+                                                                   
+
+    
+
+                                                               
+
+                                                                    
+                 
+                            
+                                                                                          
+           
+
+    <ScrollView
+        android:scrollbars="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="8dp" android:tag="layout/fragment_book_title_0" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools" tools:context=".ui.main.fragment.home.title.BookTitleFragment">
+
+        <LinearLayout
+            android:background="@color/cardview_light_background"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <ImageView
+                android:background="@android:color/white"
+                android:minHeight="200dp"
+                android:scaleType="centerInside"
+                android:tag="binding_1"                       
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:gravity="center"
+                android:textSize="24sp"
+                android:textAllCaps="true"
+                android:textColor="@android:color/black"
+                style="@style/textTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:tag="binding_2"                            />
+
+            <TextView
+                style="@style/textTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:tag="binding_3"                                        />
+
+            <TextView
+                style="@style/textTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:tag="binding_4"                                           />
+
+            <TextView
+                style="@style/textTitle"
+                android:tag="binding_5"                                                       
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                style="@style/textTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:tag="binding_6"                                                                                   />
+
+            <TextView
+                style="@style/textTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:tag="binding_7"                                                                                  />
+
+            <Button
+                android:id="@+id/bt_gotoChapter"
+                style="@style/Widget.MaterialComponents.Button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/read_bookstory"
+                android:textSize="20sp" />
+
+            <TextView
+                style="@style/textTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Nhóm dịch"
+                android:tag="binding_8"                                                 />
+
+            <TextView
+                style="@style/textTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Des"
+                android:lines="4"
+                android:tag="binding_9"                                           />
+        </LinearLayout>
+    </ScrollView>
+
+         

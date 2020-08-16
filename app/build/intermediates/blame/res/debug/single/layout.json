@@ -1,0 +1,42 @@
+[
+    {
+        "merged": "D:\\fpoly\\mock\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_register.xml",
+        "source": "D:\\fpoly\\mock\\app\\src\\main\\res\\layout\\fragment_register.xml"
+    },
+    {
+        "merged": "D:\\fpoly\\mock\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_book_title.xml",
+        "source": "D:\\fpoly\\mock\\app\\src\\main\\res\\layout\\fragment_book_title.xml"
+    },
+    {
+        "merged": "D:\\fpoly\\mock\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_user_manager.xml",
+        "source": "D:\\fpoly\\mock\\app\\src\\main\\res\\layout\\fragment_user_manager.xml"
+    },
+    {
+        "merged": "D:\\fpoly\\mock\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_comic.xml",
+        "source": "D:\\fpoly\\mock\\app\\src\\main\\res\\layout\\activity_comic.xml"
+    },
+    {
+        "merged": "D:\\fpoly\\mock\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_home.xml",
+        "source": "D:\\fpoly\\mock\\app\\src\\main\\res\\layout\\fragment_home.xml"
+    },
+    {
+        "merged": "D:\\fpoly\\mock\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_read_book.xml",
+        "source": "D:\\fpoly\\mock\\app\\src\\main\\res\\layout\\activity_read_book.xml"
+    },
+    {
+        "merged": "D:\\fpoly\\mock\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\item_book.xml",
+        "source": "D:\\fpoly\\mock\\app\\src\\main\\res\\layout\\item_book.xml"
+    },
+    {
+        "merged": "D:\\fpoly\\mock\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\item_book_type.xml",
+        "source": "D:\\fpoly\\mock\\app\\src\\main\\res\\layout\\item_book_type.xml"
+    },
+    {
+        "merged": "D:\\fpoly\\mock\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\item_book_history.xml",
+        "source": "D:\\fpoly\\mock\\app\\src\\main\\res\\layout\\item_book_history.xml"
+    },
+    {
+        "merged": "D:\\fpoly\\mock\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_book_title.xml",
+        "source": "D:\\fpoly\\mock\\app\\src\\main\\res\\layout\\activity_book_title.xml"
+    }
+]

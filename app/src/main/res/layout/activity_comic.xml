@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+<data>
+    <variable
+        name="ViewModel"
+        type="com.example.bookstory.ui.comic.ComicViewModel" />
+</data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="4dp"
+        tools:context=".ui.comic.ComicActivity">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:id="@+id/linearLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <Button
+                android:onClick="@{()->ViewModel.onPre()}"
+                android:layout_margin="4dp"
+                android:id="@+id/bt_pre"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Pre" />
+
+            <Button
+                android:onClick="@{()->ViewModel.onNext()}"
+                android:layout_margin="4dp"
+                android:layout_weight="1"
+                android:id="@+id/bt_next"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Next" />
+        </LinearLayout>
+
+        <TextView
+            android:gravity="center"
+            android:text="@{``+ViewModel.chapNumber}"
+            android:id="@+id/et_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
+            tools:layout_editor_absoluteX="8dp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_img"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/et_name"
+           />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

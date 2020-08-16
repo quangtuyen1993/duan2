@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">BookStory</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="libary">Libary</string>
+    <string name="home">Home</string>
+    <string name="category">Category</string>
+    <string name="BASE_URL">http://192.168.1.135:3000/</string>
+    <string name="image">Image</string>
+    <string name="read_bookstory">Read BookStory</string>
+    <string name="refresh">Refresh</string>
+    <string name="search_book">Search Book</string>
+
+    <string name="facebook_app_id">602717697012537</string>
+    <string name="fb_login_protocol_scheme">fb602717697012537</string>
+
+    <string name="ID_CLIENT">160920368462-js605n7bodoc8tounacbj3qu4hjt41do.apps.googleusercontent.com</string>
+</resources>

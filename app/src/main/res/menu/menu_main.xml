@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/homeFragment"
+        android:icon="@drawable/ic_home_black_24dp"
+        android:title="@string/home" />
+    <item
+        android:icon="@drawable/ic_library_books_black_24dp"
+        android:title="@string/category"
+        android:id="@+id/categoryFragment"
+        />
+    <item
+        android:id="@+id/nav_graph_library"
+        android:icon="@drawable/ic_local_library_black_24dp"
+        android:title="@string/libary" />
+    <item
+        android:id="@+id/userLoginManagerFragment"
+        android:icon="@drawable/ic_supervisor_account_black_24dp"
+        android:title="UserManager" />
+</menu>

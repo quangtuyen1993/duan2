@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="com.example.bookstory.util.ImgHandler" />
+
+        <import type="com.example.bookstory.util.ConvertDateTime" />
+
+        <variable
+            name="viewholder"
+            type="com.example.bookstory.ui.booktitle.BookTitleViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/gradient"
+        tools:context=".ui.booktitle.BookTitleActivity">
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:scrollbars="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/constraintLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:background="@drawable/back"
+                    android:text="Hello word"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHeight_percent="0.3"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <androidx.appcompat.widget.Toolbar
+                        style="@style/ToolbarColoredBackArrow"
+                        app:popupTheme="@style/Theme.AppCompat.NoActionBar"
+                        android:id="@+id/toolbar_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="?attr/actionBarSize"
+                        android:background="@android:color/transparent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        ImgUrl="@{viewholder.bookLive.imgUrl}"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        app:civ_border_color="#FFFFFF"
+                        app:civ_border_width="4dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHeight_percent="0.5"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.70"
+                        app:layout_constraintWidth_percent="0.5" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <LinearLayout
+                    android:id="@+id/linearDev"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="8dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
+
+                    <TextView
+                        android:id="@+id/tv_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="@{viewholder.bookLive.name}"
+                        android:textColor="@android:color/white"
+                        android:textSize="24sp" />
+
+                    <TextView
+                        android:id="@+id/tv_author"
+                        style="@style/textContent"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@{`Author: `+viewholder.bookLive.getAuthor}"
+                        android:textColor="@color/text" />
+
+                    <TextView
+                        android:id="@+id/tv_state"
+                        style="@style/textContent"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@{`State: `+viewholder.bookLive.status}"
+                        android:textColor="@color/text" />
+
+                    <TextView
+                        android:id="@+id/tv_chapters"
+                        style="@style/textContent"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@{`Chapters`+viewholder.bookLive.chapters}"
+                        android:textColor="@color/text" />
+
+                    <TextView
+                        android:id="@+id/tv_dateCreate"
+                        style="@style/textContent"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@{`Date Create`+ConvertDateTime.convertDateTime(viewholder.bookLive.dateStart)}"
+                        android:textColor="@color/text" />
+
+                    <TextView
+                        android:id="@+id/tv_dateUpdate"
+                        style="@style/textContent"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@{`Date Update`+ConvertDateTime.convertDateTime(viewholder.bookLive.dateUpdate)}"
+                        android:textColor="@color/text" />
+
+                    <Button
+                        android:id="@+id/bt_readBook"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:onClick="@{()->viewholder.onChangeScreen(viewholder.bookLive)}"
+                        android:text="Doc Truyen"
+                        android:textColor="@android:color/white" />
+
+                    <LinearLayout
+                        android:id="@+id/iv_divider"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="50dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/gradient" />
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="50dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/gradient" />
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="50dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/gradient" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:orientation="vertical"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/linearDev">
+
+
+                    <TextView
+                        android:id="@+id/tv_bookType"
+                        style="@style/textContent"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@{`Thể loại: `+viewholder.bookLive.bookType.toString()}"
+                        android:textColor="@android:color/white" />
+
+                    <TextView
+                        android:id="@+id/tv_translator"
+                        style="@style/textContent"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@{`Nhóm dịch: `+viewholder.bookLive.translators}"
+                        android:textColor="@android:color/white" />
+
+                    <TextView
+                        android:id="@+id/tv_description"
+                        style="@style/textContent"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="@{`Tóm tắt:`+viewholder.bookLive.des}"
+                        android:textColor="@android:color/white" />
+                </LinearLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

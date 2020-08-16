@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="com.example.bookstory.util.ConvertString" />
+
+        <import type="com.example.bookstory.util.ConvertDateTime" />
+
+        <variable
+            name="book"
+            type="com.example.bookstory.vo.Book" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="4dp"
+        android:padding="8dp"
+        app:cardCornerRadius="3dp"
+        app:cardElevation="3dp">
+
+
+
+        <LinearLayout
+            android:background="@drawable/gradient"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="1dp"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                >
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:layout_margin="12dp"
+                    error="@{@drawable/ic_library_books_black_24dp}"
+                    imgUrl="@{book.getImgUrl()}"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:contentDescription="@string/image" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:orientation="vertical"
+                android:padding="4dp">
+
+                <TextView
+                    android:textStyle="bold"
+                    android:id="@+id/tv_name"
+                    style="@style/textView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Name"
+                    android:lineHeight="20dp"
+                    android:lines="2"
+                    android:minLines="2"
+                    android:text="@{book.getName()}"
+                    android:textColor="@color/text" />
+
+                <TextView
+                    android:textColor="@android:color/white"
+                    android:id="@+id/tv_chapters"
+                    style="@style/textView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Chapter"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:text="@{`Chương: `+((book.getChapters >0) ? book.getChapters: book.getComics)+`-T/g: `+book.getTranslators }"
+                />
+
+                <TextView
+                    android:textStyle="bold"
+                    android:textColor="@android:color/white"
+                    android:textSize="14sp"
+                    android:id="@+id/tv_dateUpdate"
+                    style="@style/textView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="DateUpdate"
+                    android:lineHeight="18sp"
+                    android:text="@{`Cập nhật: `+ConvertDateTime.convertDateTime( book.getDateUpdate())}"
+              />
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</layout>

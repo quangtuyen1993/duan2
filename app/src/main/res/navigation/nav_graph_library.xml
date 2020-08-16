@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_library"
+    app:startDestination="@id/libaryFragment"
+    >
+    <fragment
+        android:id="@+id/libaryFragment"
+        android:name="com.example.bookstory.ui.main.fragment.library.HistoryLibraryFragment"
+        android:label="fragment_libary"
+        tools:layout="@layout/fragment_history">
+        <action
+            android:id="@+id/action_libaryFragment_to_typeBookFragment"
+            app:destination="@id/typeBookFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/typeBookFragment"
+        android:name="com.example.bookstory.ui.main.fragment.library.TypeBookFragment"
+        android:label="fragment_type_book"
+        tools:layout="@layout/fragment_type_book" />
+</navigation>

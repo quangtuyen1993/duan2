@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.main.fragment.home.title.BookTitleFragment">
+
+    <data>
+
+        <import type="com.example.bookstory.util.ImgHandler" />
+
+        <import type="com.example.bookstory.util.ConvertDateTime" />
+        <variable
+            name="ViewModel"
+            type="com.example.bookstory.ui.main.fragment.home.title.BookTitleViewModel" />
+    </data>
+
+    <ScrollView
+        android:scrollbars="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="8dp">
+
+        <LinearLayout
+            android:background="@color/cardview_light_background"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <ImageView
+                android:background="@android:color/white"
+                android:minHeight="200dp"
+                android:scaleType="centerInside"
+                ImgUrl="@{ViewModel.bookLiveData.getImgUrl()}"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:gravity="center"
+                android:textSize="24sp"
+                android:textAllCaps="true"
+                android:textColor="@android:color/black"
+                style="@style/textTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{ViewModel.bookLiveData.getName()}" />
+
+            <TextView
+                style="@style/textTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{`Author:`+ViewModel.bookLiveData.getAuthor()}" />
+
+            <TextView
+                style="@style/textTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{`Chapter:`+ViewModel.bookLiveData.getChapters()}" />
+
+            <TextView
+                style="@style/textTitle"
+                android:text="@{`Cageroty: `+ViewModel.bookLiveData.getBookType().toString()}"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                style="@style/textTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{`DateCreated: `+ ConvertDateTime.convertDateTime(ViewModel.bookLiveData.getDateStart())}" />
+
+            <TextView
+                style="@style/textTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{`DateUpdate: `+ConvertDateTime.convertDateTime(ViewModel.bookLiveData.getDateUpdate())}" />
+
+            <Button
+                android:id="@+id/bt_gotoChapter"
+                style="@style/Widget.MaterialComponents.Button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/read_bookstory"
+                android:textSize="20sp" />
+
+            <TextView
+                style="@style/textTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Nhóm dịch"
+                android:text="@{`Traslator: `+ViewModel.bookLiveData.getTranslators()}" />
+
+            <TextView
+                style="@style/textTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Des"
+                android:lines="4"
+                android:text="@{`Desctiption: `+ViewModel.bookLiveData.getDes()}" />
+        </LinearLayout>
+    </ScrollView>
+
+</layout>

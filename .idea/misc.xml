@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" project-jdk-name="1.8" project-jdk-type="JavaSDK" />
+  <component name="SvnBranchConfigurationManager">
+    <option name="myConfigurationMap">
+      <map>
+        <entry key="D:/">
+          <value>
+            <SvnBranchConfiguration>
+              <option name="branchUrls">
+                <list>
+                  <option value="https://118.69.210.28:5556/svn/HCM20_FR_ANDROID_01/branches" />
+                  <option value="https://118.69.210.28:5556/svn/HCM20_FR_ANDROID_01/tags" />
+                </list>
+              </option>
+              <option name="trunkUrl" value="https://118.69.210.28:5556/svn/HCM20_FR_ANDROID_01/trunk" />
+            </SvnBranchConfiguration>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$">
+          <value>
+            <SvnBranchConfiguration>
+              <option name="branchUrls">
+                <list>
+                  <option value="https://118.69.210.28:5556/svn/HCM20_FR_ANDROID_01/branches" />
+                  <option value="https://118.69.210.28:5556/svn/HCM20_FR_ANDROID_01/tags" />
+                </list>
+              </option>
+              <option name="trunkUrl" value="https://118.69.210.28:5556/svn/HCM20_FR_ANDROID_01/trunk" />
+            </SvnBranchConfiguration>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
