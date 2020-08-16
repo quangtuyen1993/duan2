@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "D:\\fpoly\\mock\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-small-v4\\values-small-v4.xml",
+            "outputFile": "/Users/admin/duan2/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-small-v4/values-small-v4.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Admin\\.gradle\\caches\\transforms-2\\files-2.1\\732fff7529918dca56ae5877b146bcaf\\material-1.2.0-alpha06\\res\\values-small-v4\\values-small-v4.xml",
+                    "source": "/Users/admin/.gradle/caches/transforms-2/files-2.1/732fff7529918dca56ae5877b146bcaf/material-1.2.0-alpha06/res/values-small-v4/values-small-v4.xml",
                     "from": {
                         "startLines": "2,3,4,5",
                         "startColumns": "4,4,4,4",

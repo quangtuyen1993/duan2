@@ -101,7 +101,6 @@ public class ComicActivity extends BaseActivity implements ComicAdapter.Callback
             bitmap.compress(Bitmap.CompressFormat.PNG, 100, byteArrayOutputStream);
             byte[] byteArray = byteArrayOutputStream .toByteArray();
             viewModel.insertContentComic(new ContentComic(idChapter,byteArray,position));
-            
         });
 
     }

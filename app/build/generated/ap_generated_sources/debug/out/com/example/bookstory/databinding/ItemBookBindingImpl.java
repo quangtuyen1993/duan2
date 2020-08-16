@@ -180,7 +180,7 @@ public class ItemBookBindingImpl extends ItemBookBinding  {
         if ((dirtyFlags & 0x3L) != 0) {
             // api target 1
 
-            com.example.bookstory.vo.History.setImageView(this.mboundView1, bookGetImgUrl, androidx.appcompat.content.res.AppCompatResources.getDrawable(mboundView1.getContext(), R.drawable.ic_library_books_black_24dp));
+            com.example.bookstory.vo.Book.setImageView(this.mboundView1, bookGetImgUrl, androidx.appcompat.content.res.AppCompatResources.getDrawable(mboundView1.getContext(), R.drawable.ic_library_books_black_24dp));
             androidx.databinding.adapters.TextViewBindingAdapter.setText(this.tvChapters, javaLangStringChNgBookGetChaptersInt0BookGetChaptersBookGetComicsJavaLangStringTGBookGetTranslators);
             androidx.databinding.adapters.TextViewBindingAdapter.setText(this.tvDateUpdate, javaLangStringCPNhTConvertDateTimeConvertDateTimeBookGetDateUpdate);
             androidx.databinding.adapters.TextViewBindingAdapter.setText(this.tvName, bookGetName);

@@ -1521,6 +1521,7 @@ drawable avd_hide_password
 drawable avd_show_password
 drawable back
 drawable background
+drawable bg_edit_text
 drawable border
 drawable btn_checkbox_checked_mtrl
 drawable btn_checkbox_checked_to_unchecked_mtrl_animation

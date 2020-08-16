@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/white"
+    android:background="#21226b"
     android:padding="10dp"
     tools:context=".ui.main.fragment.user.userloginmanager.UserLoginManagerFragment">
 
@@ -13,44 +13,48 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Email"
-        app:layout_constraintBottom_toTopOf="@+id/et_password"
-        tools:layout_editor_absoluteX="10dp" />
+        android:padding="5dp"
+        android:textColorHint="@android:color/background_dark"
+        android:background="@drawable/bg_edit_text"
+        android:layout_margin="5dp"
+        app:layout_constraintBottom_toTopOf="@+id/et_password" />
 
     <EditText
         android:id="@+id/et_password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Password"
-        app:layout_constraintBottom_toTopOf="@+id/bt_loginEmail"
-        tools:layout_editor_absoluteX="10dp" />
+        android:padding="5dp"
+        android:textColorHint="@android:color/background_dark"
+        android:background="@drawable/bg_edit_text"
+        android:layout_margin="5dp"
+        app:layout_constraintBottom_toTopOf="@+id/bt_loginEmail" />
 
     <TextView
         android:id="@+id/tv_err"
         android:layout_width="match_parent"
         android:layout_height="36dp"
         android:textColor="@android:color/holo_red_dark"
-        app:layout_constraintBottom_toTopOf="@+id/bt_register"
-        tools:layout_editor_absoluteX="10dp" />
+        app:layout_constraintBottom_toTopOf="@+id/bt_register" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintTop_toBottomOf="@+id/bt_register"
-        tools:layout_editor_absoluteX="10dp">
+        app:layout_constraintTop_toBottomOf="@+id/bt_register">
 
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="36dp"
-            android:gravity="bottom"
+            android:layout_height="40dp"
+            android:gravity="center"
             android:text="Or login with"
             android:textStyle="bold" />
 
         <com.google.android.gms.common.SignInButton
             android:id="@+id/bt_signInGoogle"
             android:layout_width="match_parent"
-            android:layout_height="36dp" />
+            android:layout_height="40dp" />
 
         <com.facebook.login.widget.LoginButton
             android:id="@+id/login_button"
@@ -67,17 +71,22 @@
     <Button
         android:id="@+id/bt_loginEmail"
         android:layout_width="match_parent"
-        android:layout_height="48dp"
+        android:layout_height="50dp"
+        android:layout_margin="5dp"
+        android:background="#d3d1f0"
+        android:padding="5dp"
+        android:textColor="@android:color/background_dark"
+        app:layout_constraintStart_toStartOf="@id/et_email"
+        app:layout_constraintEnd_toEndOf="@id/et_email"
         android:drawableStart="@drawable/ic_email_black_24dp"
-        android:text="Sign in Email"
-        app:layout_constraintBottom_toTopOf="@+id/tv_err"
-        tools:layout_editor_absoluteX="10dp" />
+        android:text="Sign in with Email"
+        app:layout_constraintBottom_toTopOf="@+id/tv_err" />
 
     <Button
         android:id="@+id/bt_register"
         style="@style/Widget.MaterialComponents.Button.OutlinedButton"
         android:layout_width="match_parent"
-        android:layout_height="36dp"
+        android:layout_height="40dp"
         android:gravity="center"
         android:text="Do not have an account ?"
         android:textAllCaps="false"
@@ -85,7 +94,6 @@
         android:textSize="12sp"
         android:textStyle="italic"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="9dp" />
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
