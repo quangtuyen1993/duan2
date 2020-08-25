@@ -17,7 +17,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/gradient"
+        android:background="@android:color/white"
         tools:context=".ui.booktitle.BookTitleActivity" android:tag="layout/activity_book_title_0" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools">
 
 
@@ -36,13 +36,12 @@
                     android:id="@+id/constraintLayout"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:background="@drawable/back"
+                    android:background="@drawable/comic"
                     android:text="Hello word"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHeight_percent="0.3"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent">
-
                     <androidx.appcompat.widget.Toolbar
                         style="@style/ToolbarColoredBackArrow"
                         app:popupTheme="@style/Theme.AppCompat.NoActionBar"
@@ -56,14 +55,13 @@
                         android:tag="binding_1"               
                         android:layout_width="0dp"
                         android:layout_height="0dp"
-                        app:civ_border_color="#FFFFFF"
+                        app:civ_border_color="#f79f1b"
                         app:civ_border_width="4dp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHeight_percent="0.5"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintVertical_bias="0.70"
                         app:layout_constraintWidth_percent="0.5" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -72,7 +70,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:padding="8dp"
+                    android:padding="5dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
@@ -82,17 +80,18 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center"
+                        android:textStyle="bold"
                         android:tag="binding_2"                   
-                        android:textColor="@android:color/white"
-                        android:textSize="24sp" />
+                        android:textColor="#f7a71b"
+                        android:textSize="25dp" />
 
                     <TextView
                         android:id="@+id/tv_author"
                         style="@style/textContent"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:tag="binding_3"                                   
-                        android:textColor="@color/text" />
+                        android:textColor="@android:color/background_dark"
+                        android:tag="binding_3"                                    />
 
                     <TextView
                         android:id="@+id/tv_state"
@@ -100,7 +99,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:tag="binding_4"                               
-                        android:textColor="@color/text" />
+                        android:textColor="@android:color/background_dark" />
 
                     <TextView
                         android:id="@+id/tv_chapters"
@@ -108,7 +107,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:tag="binding_5"                                  
-                        android:textColor="@color/text" />
+                        android:textColor="@android:color/background_dark" />
 
                     <TextView
                         android:id="@+id/tv_dateCreate"
@@ -116,7 +115,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:tag="binding_6"                                                                       
-                        android:textColor="@color/text" />
+                        android:textColor="@android:color/background_dark"
+                        />
 
                     <TextView
                         android:id="@+id/tv_dateUpdate"
@@ -124,41 +124,18 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:tag="binding_7"                                                                        
-                        android:textColor="@color/text" />
+                        android:textColor="@android:color/background_dark"
+                        />
 
                     <Button
                         android:id="@+id/bt_readBook"
                         android:layout_width="match_parent"
                         android:layout_height="50dp"
+                        android:layout_margin="10dp"
                         android:tag="binding_8"                                                
-                        android:text="Doc Truyen"
+                        android:text="Reading Books"
+                        android:background="#f7a71b"
                         android:textColor="@android:color/white" />
-
-                    <LinearLayout
-                        android:id="@+id/iv_divider"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
-
-                        <ImageView
-                            android:layout_width="0dp"
-                            android:layout_height="50dp"
-                            android:layout_weight="1"
-                            android:background="@drawable/gradient" />
-
-                        <ImageView
-                            android:layout_width="0dp"
-                            android:layout_height="50dp"
-                            android:layout_weight="1"
-                            android:background="@drawable/gradient" />
-
-                        <ImageView
-                            android:layout_width="0dp"
-                            android:layout_height="50dp"
-                            android:layout_weight="1"
-                            android:background="@drawable/gradient" />
-                    </LinearLayout>
-
                 </LinearLayout>
 
 
@@ -173,26 +150,32 @@
                     <TextView
                         android:id="@+id/tv_bookType"
                         style="@style/textContent"
+                        android:padding="10dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:tag="binding_9"                                               
-                        android:textColor="@android:color/white" />
+                        android:textColor="@android:color/background_dark"
+                        />
 
                     <TextView
                         android:id="@+id/tv_translator"
                         style="@style/textContent"
+                        android:padding="10dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:tag="binding_10"                                       
-                        android:textColor="@android:color/white" />
+                        android:textColor="@android:color/background_dark"
+                        />
 
                     <TextView
                         android:id="@+id/tv_description"
                         style="@style/textContent"
+                        android:padding="10dp"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:tag="binding_11"                            
-                        android:textColor="@android:color/white" />
+                        android:textColor="@android:color/background_dark"
+                        />
                 </LinearLayout>
             </androidx.constraintlayout.widget.ConstraintLayout>
         </ScrollView>

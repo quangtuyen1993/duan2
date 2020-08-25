@@ -95,4 +95,11 @@ dependencies {
     implementation 'de.hdodenhof:circleimageview:3.1.0'
     implementation "android.arch.paging:runtime:1.0.1"
     implementation 'com.facebook.android:facebook-android-sdk:[4,5)'
+
+
+    //Carousel
+    implementation 'com.synnapps:carouselview:0.1.4'
+
+    implementation("io.coil-kt:coil:0.12.0")
+
 }

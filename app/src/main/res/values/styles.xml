@@ -40,7 +40,7 @@
     </style>
 
     <style name="ToolbarColoredBackArrow" parent="AppTheme">
-        <item name="android:textColorSecondary">#ffffff</item>
+        <item name="android:textColorSecondary">#f79f1b</item>
     </style>
 
     <style name="textTitle">

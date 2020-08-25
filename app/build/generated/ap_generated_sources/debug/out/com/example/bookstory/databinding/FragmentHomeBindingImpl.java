@@ -14,28 +14,36 @@ public class FragmentHomeBindingImpl extends FragmentHomeBinding  {
     static {
         sIncludes = null;
         sViewsWithIds = new android.util.SparseIntArray();
-        sViewsWithIds.put(R.id.tv_load, 1);
-        sViewsWithIds.put(R.id.rv, 2);
-        sViewsWithIds.put(R.id.progress, 3);
+        sViewsWithIds.put(R.id.rlHeader, 1);
+        sViewsWithIds.put(R.id.ivLogo, 2);
+        sViewsWithIds.put(R.id.carouselView, 3);
+        sViewsWithIds.put(R.id.tvTitle, 4);
+        sViewsWithIds.put(R.id.rv, 5);
+        sViewsWithIds.put(R.id.tvTitleTopBooks, 6);
+        sViewsWithIds.put(R.id.rvTopViews, 7);
     }
     // views
     @NonNull
-    private final androidx.constraintlayout.widget.ConstraintLayout mboundView0;
+    private final android.widget.RelativeLayout mboundView0;
     // variables
     // values
     // listeners
     // Inverse Binding Event Handlers
 
     public FragmentHomeBindingImpl(@Nullable androidx.databinding.DataBindingComponent bindingComponent, @NonNull View root) {
-        this(bindingComponent, root, mapBindings(bindingComponent, root, 4, sIncludes, sViewsWithIds));
+        this(bindingComponent, root, mapBindings(bindingComponent, root, 8, sIncludes, sViewsWithIds));
     }
     private FragmentHomeBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 0
-            , (android.widget.ProgressBar) bindings[3]
-            , (androidx.recyclerview.widget.RecyclerView) bindings[2]
-            , (android.widget.TextView) bindings[1]
+            , (com.synnapps.carouselview.CarouselView) bindings[3]
+            , (android.widget.ImageView) bindings[2]
+            , (android.widget.RelativeLayout) bindings[1]
+            , (androidx.recyclerview.widget.RecyclerView) bindings[5]
+            , (androidx.recyclerview.widget.RecyclerView) bindings[7]
+            , (android.widget.TextView) bindings[4]
+            , (android.widget.TextView) bindings[6]
             );
-        this.mboundView0 = (androidx.constraintlayout.widget.ConstraintLayout) bindings[0];
+        this.mboundView0 = (android.widget.RelativeLayout) bindings[0];
         this.mboundView0.setTag(null);
         setRootTag(root);
         // listeners

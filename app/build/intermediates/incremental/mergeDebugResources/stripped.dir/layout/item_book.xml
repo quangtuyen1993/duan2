@@ -14,18 +14,17 @@
            
 
     <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_margin="4dp"
         android:padding="8dp"
-        app:cardCornerRadius="3dp"
+        app:cardCornerRadius="20dp"
+        app:cardBackgroundColor="#f79f1b"
         app:cardElevation="3dp" android:tag="layout/item_book_0" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
 
-
-
         <LinearLayout
-            android:background="@drawable/gradient"
-            android:layout_width="match_parent"
+            android:background="@android:color/white"
+            android:layout_width="350dp"
             android:layout_height="wrap_content"
             android:layout_margin="1dp"
             android:orientation="horizontal">
@@ -63,10 +62,10 @@
                     android:lines="2"
                     android:minLines="2"
                     android:tag="binding_2"         
-                    android:textColor="@color/text" />
+                    android:textColor="#f79f1b" />
 
                 <TextView
-                    android:textColor="@android:color/white"
+                    android:textColor="#f79f1b"
                     android:id="@+id/tv_chapters"
                     style="@style/textView"
                     android:layout_width="match_parent"
@@ -79,7 +78,7 @@
 
                 <TextView
                     android:textStyle="bold"
-                    android:textColor="@android:color/white"
+                    android:textColor="#f79f1b"
                     android:textSize="14sp"
                     android:id="@+id/tv_dateUpdate"
                     style="@style/textView"

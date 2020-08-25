@@ -44,8 +44,16 @@
         "source": "/Users/admin/duan2/app/src/main/res/mipmap-hdpi/ic_launcher_round.png"
     },
     {
+        "merged": "/Users/admin/duan2/app/build/intermediates/res/merged/debug/drawable_books.png.flat",
+        "source": "/Users/admin/duan2/app/src/main/res/drawable/books.png"
+    },
+    {
         "merged": "/Users/admin/duan2/app/build/intermediates/res/merged/debug/layout_fragment_libary.xml.flat",
         "source": "/Users/admin/duan2/app/src/main/res/layout/fragment_libary.xml"
+    },
+    {
+        "merged": "/Users/admin/duan2/app/build/intermediates/res/merged/debug/drawable_comic.jpeg.flat",
+        "source": "/Users/admin/duan2/app/src/main/res/drawable/comic.jpeg"
     },
     {
         "merged": "/Users/admin/duan2/app/build/intermediates/res/merged/debug/drawable_border.xml.flat",
@@ -230,6 +238,10 @@
     {
         "merged": "/Users/admin/duan2/app/build/intermediates/res/merged/debug/layout_activity_read_book_local.xml.flat",
         "source": "/Users/admin/duan2/app/src/main/res/layout/activity_read_book_local.xml"
+    },
+    {
+        "merged": "/Users/admin/duan2/app/build/intermediates/res/merged/debug/drawable_ic_baseline_search_24.xml.flat",
+        "source": "/Users/admin/duan2/app/src/main/res/drawable/ic_baseline_search_24.xml"
     },
     {
         "merged": "/Users/admin/duan2/app/build/intermediates/res/merged/debug/layout_fragment_read_book.xml.flat",

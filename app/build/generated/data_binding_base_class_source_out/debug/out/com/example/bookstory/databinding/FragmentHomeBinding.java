@@ -4,7 +4,8 @@ package com.example.bookstory.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ProgressBar;
+import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -14,28 +15,46 @@ import androidx.databinding.ViewDataBinding;
 import androidx.recyclerview.widget.RecyclerView;
 import com.example.bookstory.R;
 import com.example.bookstory.ui.main.fragment.home.home.HomeViewModel;
+import com.synnapps.carouselview.CarouselView;
 import java.lang.Deprecated;
 import java.lang.Object;
 
 public abstract class FragmentHomeBinding extends ViewDataBinding {
   @NonNull
-  public final ProgressBar progress;
+  public final CarouselView carouselView;
+
+  @NonNull
+  public final ImageView ivLogo;
+
+  @NonNull
+  public final RelativeLayout rlHeader;
 
   @NonNull
   public final RecyclerView rv;
 
   @NonNull
-  public final TextView tvLoad;
+  public final RecyclerView rvTopViews;
+
+  @NonNull
+  public final TextView tvTitle;
+
+  @NonNull
+  public final TextView tvTitleTopBooks;
 
   @Bindable
   protected HomeViewModel mHomeViewModel;
 
   protected FragmentHomeBinding(Object _bindingComponent, View _root, int _localFieldCount,
-      ProgressBar progress, RecyclerView rv, TextView tvLoad) {
+      CarouselView carouselView, ImageView ivLogo, RelativeLayout rlHeader, RecyclerView rv,
+      RecyclerView rvTopViews, TextView tvTitle, TextView tvTitleTopBooks) {
     super(_bindingComponent, _root, _localFieldCount);
-    this.progress = progress;
+    this.carouselView = carouselView;
+    this.ivLogo = ivLogo;
+    this.rlHeader = rlHeader;
     this.rv = rv;
-    this.tvLoad = tvLoad;
+    this.rvTopViews = rvTopViews;
+    this.tvTitle = tvTitle;
+    this.tvTitleTopBooks = tvTitleTopBooks;
   }
 
   public abstract void setHomeViewModel(@Nullable HomeViewModel homeViewModel);

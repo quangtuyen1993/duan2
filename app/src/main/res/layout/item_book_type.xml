@@ -28,17 +28,17 @@
                 android:padding="1dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/border">
+                android:background="@android:color/white">
 
                 <TextView
                     android:textStyle="bold"
                     android:textSize="16sp"
-                    android:textColor="@color/text"
-                    android:background="@drawable/gradient"
+                    android:textColor="#f79f1b"
                     android:id="@+id/tv_name"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:gravity="center"
+                    android:background="@drawable/bg_edit_text"
                     android:text="@{bookType.name}"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"

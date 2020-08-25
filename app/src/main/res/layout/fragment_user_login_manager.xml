@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#21226b"
+    android:background="@drawable/comic"
     android:padding="10dp"
     tools:context=".ui.main.fragment.user.userloginmanager.UserLoginManagerFragment">
 
@@ -14,6 +14,7 @@
         android:layout_height="wrap_content"
         android:hint="Email"
         android:padding="5dp"
+        android:textColor="@android:color/background_dark"
         android:textColorHint="@android:color/background_dark"
         android:background="@drawable/bg_edit_text"
         android:layout_margin="5dp"
@@ -25,6 +26,7 @@
         android:layout_height="wrap_content"
         android:hint="Password"
         android:padding="5dp"
+        android:textColor="@android:color/background_dark"
         android:textColorHint="@android:color/background_dark"
         android:background="@drawable/bg_edit_text"
         android:layout_margin="5dp"
@@ -73,13 +75,12 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_margin="5dp"
-        android:background="#d3d1f0"
+        android:background="#f7a71b"
         android:padding="5dp"
         android:textColor="@android:color/background_dark"
         app:layout_constraintStart_toStartOf="@id/et_email"
         app:layout_constraintEnd_toEndOf="@id/et_email"
-        android:drawableStart="@drawable/ic_email_black_24dp"
-        android:text="Sign in with Email"
+        android:text="Sign in"
         app:layout_constraintBottom_toTopOf="@+id/tv_err" />
 
     <Button
@@ -90,9 +91,9 @@
         android:gravity="center"
         android:text="Do not have an account ?"
         android:textAllCaps="false"
-        android:textColor="@android:color/holo_blue_dark"
+        android:textColor="#f7a71b"
         android:textSize="12sp"
-        android:textStyle="italic"
+        android:textStyle="bold|italic"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

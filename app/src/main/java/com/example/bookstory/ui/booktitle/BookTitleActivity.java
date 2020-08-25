@@ -42,7 +42,6 @@ public class BookTitleActivity extends BaseActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
-
         vm = new ViewModelProvider(this, factory).get(BookTitleViewModel.class);
         vm.setBookLive(book);
         binding.setViewholder(vm);

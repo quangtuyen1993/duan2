@@ -10,6 +10,7 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
+        android:background="@android:color/white"
         android:layout_height="match_parent"
         android:padding="4dp"
         tools:context=".ui.comic.ComicActivity" android:tag="layout/activity_comic_0">
@@ -29,6 +30,7 @@
                 android:id="@+id/bt_pre"
                 android:layout_weight="1"
                 android:layout_width="0dp"
+                android:background="#f7a71b"
                 android:layout_height="wrap_content"
                 android:text="Pre" />
 
@@ -38,6 +40,7 @@
                 android:layout_weight="1"
                 android:id="@+id/bt_next"
                 android:layout_width="0dp"
+                android:background="#f7a71b"
                 android:layout_height="wrap_content"
                 android:text="Next" />
         </LinearLayout>

@@ -31,6 +31,9 @@ import com.example.bookstory.ui.base.BaseFragment;
 import com.example.bookstory.ui.booktitle.BookTitleActivity;
 import com.example.bookstory.util.BookAdapter;
 import com.example.bookstory.vo.Book;
+import com.squareup.picasso.Picasso;
+import com.synnapps.carouselview.CarouselView;
+import com.synnapps.carouselview.ImageListener;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -56,6 +59,9 @@ public class HomeFragment extends BaseFragment {
     private SearchView searchView;
     private HomeViewModel vm;
     private LinearLayoutManager layoutManager;
+    private LinearLayoutManager layoutManager2;
+    CarouselView carouselView;
+
     private int pastVisiblesItems, visibleItemCount, totalItemCount;
     int index = 1;
 
@@ -68,20 +74,34 @@ public class HomeFragment extends BaseFragment {
                              Bundle savedInstanceState) {
         binding = FragmentHomeBinding.inflate(inflater);
         return binding.getRoot();
+
+
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         vm = new ViewModelProvider(this, factory).get(HomeViewModel.class);
+        carouselView = view.findViewById(R.id.carouselView);
+        carouselView.setPageCount(3);
         initToolbar(view);
         binding.setLifecycleOwner(this);
         binding.setHomeViewModel(vm);
         binding.setLifecycleOwner(getViewLifecycleOwner());
         binding.executePendingBindings();
+        ImageListener imageListener = new ImageListener() {
+            @Override
+            public void setImageForPosition(int position, ImageView imageView) {
+                vm.loadLocal().observe(getViewLifecycleOwner(),books ->{
+                    Picasso.get().load(books.get(position).getImgUrl())
+                            .into(imageView);
+                });
+            }
+        };
+        carouselView.setImageListener(imageListener);
 
         bookAdapter = new BookAdapter();
-        layoutManager = new LinearLayoutManager(requireActivity(), RecyclerView.VERTICAL, false);
+        layoutManager = new LinearLayoutManager(requireActivity(), RecyclerView.HORIZONTAL, false);
         binding.rv.setLayoutManager(layoutManager);
         bookAdapter.setItemOnClick(this::setItemOnClick);
         binding.rv.setAdapter(bookAdapter);
@@ -91,8 +111,19 @@ public class HomeFragment extends BaseFragment {
                 onScrolledListener(recyclerView, dx, dy);
             }
         });
-        vm.loadLocal().observe(getViewLifecycleOwner(), books -> bookAdapter.setBooks(books));
+        vm.loadLocal().observe(getViewLifecycleOwner(), books ->
+                bookAdapter.setBooks(books)
+        );
+        layoutManager2 = new LinearLayoutManager(requireActivity(), RecyclerView.HORIZONTAL, false);
 
+        binding.rvTopViews.setLayoutManager(layoutManager2);
+        binding.rvTopViews.setAdapter(bookAdapter);
+        binding.rvTopViews.addOnScrollListener(new RecyclerView.OnScrollListener() {
+            @Override
+            public void onScrolled(@NonNull RecyclerView recyclerView, int dx, int dy) {
+                onScrolledListener(recyclerView, dx, dy);
+            }
+        });
     }
 
     private void initToolbar(View view) {
@@ -109,15 +140,15 @@ public class HomeFragment extends BaseFragment {
             }
             if (vm.page.getValue() != null && vm.limit.getValue() != null) {
                 vm.insertNewListDao(books);
-                binding.tvLoad.setText("(" + vm.page.getValue() + "/" + ((int) Math.ceil(vm.limit.getValue())) + ")");
+//                binding.tvLoad.setText("(" + vm.page.getValue() + "/" + ((int) Math.ceil(vm.limit.getValue())) + ")");
                 bookAdapter.setBooks(books);
             }
         });
         vm.isLoading.observe(getViewLifecycleOwner(), isLoad -> {
             if (isLoad) {
-                binding.progress.setVisibility(View.VISIBLE);
+//                binding.progress.setVisibility(View.VISIBLE);
             } else {
-                binding.progress.setVisibility(View.GONE);
+//                binding.progress.setVisibility(View.GONE);
             }
         });
     }
@@ -141,6 +172,8 @@ public class HomeFragment extends BaseFragment {
         startActivity(intent);
     }
 
+
+
     @Override
     public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
         requireActivity().getMenuInflater().inflate(R.menu.menu_appbar, menu);
@@ -148,10 +181,10 @@ public class HomeFragment extends BaseFragment {
         searchView = (SearchView) MenuItemCompat.getActionView(searchViewItem);
         SearchView.SearchAutoComplete searchAutoComplete
                 = searchView.findViewById(androidx.appcompat.R.id.search_src_text);
-        searchAutoComplete.setHintTextColor(getResources().getColor(android.R.color.white));
-        searchAutoComplete.setTextColor(getResources().getColor(android.R.color.white));
+        searchAutoComplete.setHintTextColor(getResources().getColor(android.R.color.background_dark));
+        searchAutoComplete.setTextColor(getResources().getColor(android.R.color.background_dark));
         ImageView searchIcon = searchView.findViewById(androidx.appcompat.R.id.search_button);
-        searchIcon.setImageDrawable(ContextCompat.getDrawable(getActivity(), R.drawable.ic_search_black_24dp));
+        searchIcon.setImageDrawable(ContextCompat.getDrawable(getActivity(), R.drawable.ic_baseline_search_24));
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {

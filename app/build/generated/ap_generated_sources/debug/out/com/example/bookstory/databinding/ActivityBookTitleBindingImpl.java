@@ -17,7 +17,6 @@ public class ActivityBookTitleBindingImpl extends ActivityBookTitleBinding imple
         sViewsWithIds.put(R.id.constraintLayout, 12);
         sViewsWithIds.put(R.id.toolbar_title, 13);
         sViewsWithIds.put(R.id.linearDev, 14);
-        sViewsWithIds.put(R.id.iv_divider, 15);
     }
     // views
     @NonNull
@@ -32,13 +31,12 @@ public class ActivityBookTitleBindingImpl extends ActivityBookTitleBinding imple
     // Inverse Binding Event Handlers
 
     public ActivityBookTitleBindingImpl(@Nullable androidx.databinding.DataBindingComponent bindingComponent, @NonNull View root) {
-        this(bindingComponent, root, mapBindings(bindingComponent, root, 16, sIncludes, sViewsWithIds));
+        this(bindingComponent, root, mapBindings(bindingComponent, root, 15, sIncludes, sViewsWithIds));
     }
     private ActivityBookTitleBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 1
             , (android.widget.Button) bindings[8]
             , (androidx.constraintlayout.widget.ConstraintLayout) bindings[12]
-            , (android.widget.LinearLayout) bindings[15]
             , (android.widget.LinearLayout) bindings[14]
             , (androidx.appcompat.widget.Toolbar) bindings[13]
             , (android.widget.TextView) bindings[3]

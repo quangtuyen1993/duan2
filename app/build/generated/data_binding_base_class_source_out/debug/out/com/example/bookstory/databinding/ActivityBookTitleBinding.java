@@ -27,9 +27,6 @@ public abstract class ActivityBookTitleBinding extends ViewDataBinding {
   public final ConstraintLayout constraintLayout;
 
   @NonNull
-  public final LinearLayout ivDivider;
-
-  @NonNull
   public final LinearLayout linearDev;
 
   @NonNull
@@ -66,14 +63,13 @@ public abstract class ActivityBookTitleBinding extends ViewDataBinding {
   protected BookTitleViewModel mViewholder;
 
   protected ActivityBookTitleBinding(Object _bindingComponent, View _root, int _localFieldCount,
-      Button btReadBook, ConstraintLayout constraintLayout, LinearLayout ivDivider,
-      LinearLayout linearDev, Toolbar toolbarTitle, TextView tvAuthor, TextView tvBookType,
-      TextView tvChapters, TextView tvDateCreate, TextView tvDateUpdate, TextView tvDescription,
-      TextView tvName, TextView tvState, TextView tvTranslator) {
+      Button btReadBook, ConstraintLayout constraintLayout, LinearLayout linearDev,
+      Toolbar toolbarTitle, TextView tvAuthor, TextView tvBookType, TextView tvChapters,
+      TextView tvDateCreate, TextView tvDateUpdate, TextView tvDescription, TextView tvName,
+      TextView tvState, TextView tvTranslator) {
     super(_bindingComponent, _root, _localFieldCount);
     this.btReadBook = btReadBook;
     this.constraintLayout = constraintLayout;
-    this.ivDivider = ivDivider;
     this.linearDev = linearDev;
     this.toolbarTitle = toolbarTitle;
     this.tvAuthor = tvAuthor;

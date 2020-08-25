@@ -13,6 +13,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@drawable/comic"
         android:padding="8dp"
         tools:context=".ui.main.fragment.user.register.RegisterFragment" android:tag="layout/fragment_register_0" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools">
 
@@ -21,11 +22,24 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:visibility="invisible" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="REGISTER FORM"
+            android:textColor="#f7a71b"
+            android:textStyle="bold"
+            android:textSize="25dp"
+            android:textAlignment="center"
+            android:layout_margin="10dp"
+            app:layout_constraintBottom_toTopOf="@id/et_email"/>
         <EditText
             android:id="@+id/et_email"
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:hint="Email"
+            android:layout_margin="5dp"
+            android:textColor="@android:color/background_dark"
+            android:background="@drawable/bg_edit_text"
             android:tag="binding_1"           
             app:layout_constraintBottom_toTopOf="@+id/et_pass" />
 
@@ -34,6 +48,9 @@
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:hint="Password"
+            android:layout_margin="5dp"
+            android:textColor="@android:color/background_dark"
+            android:background="@drawable/bg_edit_text"
             android:tag="binding_2"              
             app:layout_constraintBottom_toTopOf="@+id/et_name" />
 
@@ -42,7 +59,10 @@
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:hint="Name"
+            android:textColor="@android:color/background_dark"
             android:tag="binding_3"          
+            android:layout_margin="5dp"
+            android:background="@drawable/bg_edit_text"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -50,6 +70,7 @@
             android:id="@+id/textView"
             android:layout_width="match_parent"
             android:layout_height="36dp"
+            android:layout_margin="10dp"
             android:tag="binding_4"           
             android:textColor="@android:color/holo_red_dark"
             app:layout_constraintTop_toBottomOf="@+id/bt_control"
@@ -68,6 +89,9 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="4dp"
+                android:textSize="20dp"
+                android:textColor="@android:color/background_dark"
+                android:layout_marginEnd="10dp"
                 android:layout_weight="1"
                 android:text="Register" />
 
@@ -75,6 +99,8 @@
                 android:id="@+id/bt_login"
                 style="@style/Widget.MaterialComponents.Button"
                 android:layout_width="0dp"
+                android:textSize="20dp"
+                android:textColor="@android:color/background_dark"
                 android:layout_height="wrap_content"
                 android:layout_margin="4dp"
                 android:layout_weight="1"
