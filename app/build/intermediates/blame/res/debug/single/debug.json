@@ -80,6 +80,10 @@
         "source": "/Users/admin/duan2/app/src/main/res/mipmap-xxhdpi/ic_launcher.png"
     },
     {
+        "merged": "/Users/admin/duan2/app/build/intermediates/res/merged/debug/drawable_comic_3.jpg.flat",
+        "source": "/Users/admin/duan2/app/src/main/res/drawable/comic_3.jpg"
+    },
+    {
         "merged": "/Users/admin/duan2/app/build/intermediates/res/merged/debug/drawable_ic_supervisor_account_black_24dp.xml.flat",
         "source": "/Users/admin/duan2/app/src/main/res/drawable/ic_supervisor_account_black_24dp.xml"
     },
@@ -126,6 +130,10 @@
     {
         "merged": "/Users/admin/duan2/app/build/intermediates/res/merged/debug/mipmap-mdpi_ic_launcher.png.flat",
         "source": "/Users/admin/duan2/app/src/main/res/mipmap-mdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/admin/duan2/app/build/intermediates/res/merged/debug/drawable_comic_2.png.flat",
+        "source": "/Users/admin/duan2/app/src/main/res/drawable/comic_2.png"
     },
     {
         "merged": "/Users/admin/duan2/app/build/intermediates/res/merged/debug/mipmap-anydpi-v26_ic_launcher.xml.flat",
@@ -216,6 +224,10 @@
         "source": "/Users/admin/duan2/app/src/main/res/drawable/ic_local_library_black_24dp.xml"
     },
     {
+        "merged": "/Users/admin/duan2/app/build/intermediates/res/merged/debug/layout_activity_search_book.xml.flat",
+        "source": "/Users/admin/duan2/app/src/main/res/layout/activity_search_book.xml"
+    },
+    {
         "merged": "/Users/admin/duan2/app/build/intermediates/res/merged/debug/layout_fragment_read_book_view_pager.xml.flat",
         "source": "/Users/admin/duan2/app/src/main/res/layout/fragment_read_book_view_pager.xml"
     },
@@ -250,5 +262,9 @@
     {
         "merged": "/Users/admin/duan2/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi_ic_launcher_round.png.flat",
         "source": "/Users/admin/duan2/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "/Users/admin/duan2/app/build/intermediates/res/merged/debug/drawable_comic_1.jpg.flat",
+        "source": "/Users/admin/duan2/app/src/main/res/drawable/comic_1.jpg"
     }
 ]

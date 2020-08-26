@@ -8,6 +8,10 @@
         "source": "/Users/admin/duan2/app/src/main/res/layout/fragment_user_manager.xml"
     },
     {
+        "merged": "/Users/admin/duan2/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_search_book.xml",
+        "source": "/Users/admin/duan2/app/src/main/res/layout/activity_search_book.xml"
+    },
+    {
         "merged": "/Users/admin/duan2/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/item_book_type.xml",
         "source": "/Users/admin/duan2/app/src/main/res/layout/item_book_type.xml"
     },

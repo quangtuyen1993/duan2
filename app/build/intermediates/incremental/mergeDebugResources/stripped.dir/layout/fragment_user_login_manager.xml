@@ -26,6 +26,7 @@
         android:layout_height="wrap_content"
         android:hint="Password"
         android:padding="5dp"
+        android:inputType="textPassword"
         android:textColor="@android:color/background_dark"
         android:textColorHint="@android:color/background_dark"
         android:background="@drawable/bg_edit_text"

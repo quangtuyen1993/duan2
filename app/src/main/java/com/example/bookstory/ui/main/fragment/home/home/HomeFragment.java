@@ -29,6 +29,7 @@ import com.example.bookstory.dao.BookDAO;
 import com.example.bookstory.databinding.FragmentHomeBinding;
 import com.example.bookstory.ui.base.BaseFragment;
 import com.example.bookstory.ui.booktitle.BookTitleActivity;
+import com.example.bookstory.ui.research.SearchBookActivity;
 import com.example.bookstory.util.BookAdapter;
 import com.example.bookstory.vo.Book;
 import com.squareup.picasso.Picasso;
@@ -86,15 +87,15 @@ public class HomeFragment extends BaseFragment {
         carouselView.setPageCount(3);
         initToolbar(view);
         binding.setLifecycleOwner(this);
-        binding.setHomeViewModel(vm);
+        binding.setHomeViewModel();
         binding.setLifecycleOwner(getViewLifecycleOwner());
         binding.executePendingBindings();
+        int[] sampleImages = {R.drawable.comic_1, R.drawable.comic_2, R.drawable.comic_3};
         ImageListener imageListener = new ImageListener() {
             @Override
             public void setImageForPosition(int position, ImageView imageView) {
                 vm.loadLocal().observe(getViewLifecycleOwner(),books ->{
-                    Picasso.get().load(books.get(position).getImgUrl())
-                            .into(imageView);
+                    imageView.setImageResource(sampleImages[position]);
                 });
             }
         };
@@ -105,6 +106,7 @@ public class HomeFragment extends BaseFragment {
         binding.rv.setLayoutManager(layoutManager);
         bookAdapter.setItemOnClick(this::setItemOnClick);
         binding.rv.setAdapter(bookAdapter);
+        binding.rv.setHasFixedSize(true);
         binding.rv.addOnScrollListener(new RecyclerView.OnScrollListener() {
             @Override
             public void onScrolled(@NonNull RecyclerView recyclerView, int dx, int dy) {
@@ -185,6 +187,13 @@ public class HomeFragment extends BaseFragment {
         searchAutoComplete.setTextColor(getResources().getColor(android.R.color.background_dark));
         ImageView searchIcon = searchView.findViewById(androidx.appcompat.R.id.search_button);
         searchIcon.setImageDrawable(ContextCompat.getDrawable(getActivity(), R.drawable.ic_baseline_search_24));
+        searchIcon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), SearchBookActivity.class);
+                startActivity(intent);
+            }
+        });
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {

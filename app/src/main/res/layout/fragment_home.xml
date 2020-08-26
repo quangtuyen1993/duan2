@@ -5,10 +5,9 @@
     tools:context=".ui.main.fragment.home.home.HomeFragment">
     <data>
         <import type="com.example.bookstory.util.BookAdapter" />
-
         <variable
             name="homeViewModel"
-            type="com.example.bookstory.ui.main.fragment.home.home.HomeViewModel" />
+            type="com.example.bookstory.ui.research.SearchBookActivity" />
     </data>
     <RelativeLayout
         android:layout_width="match_parent"

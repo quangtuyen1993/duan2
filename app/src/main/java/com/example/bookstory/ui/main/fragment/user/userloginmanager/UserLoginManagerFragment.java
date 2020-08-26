@@ -2,7 +2,11 @@ package com.example.bookstory.ui.main.fragment.user.userloginmanager;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextUtils;
+import android.text.TextWatcher;
 import android.util.Log;
+import android.util.Patterns;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -94,7 +98,6 @@ public class UserLoginManagerFragment extends BaseFragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
     }
 
     @Override
@@ -135,7 +138,13 @@ public class UserLoginManagerFragment extends BaseFragment {
         googleSignInClient = GoogleSignIn.getClient(requireActivity(), gso);
         checkSignIn();
 
-        bt_loginEmail.setOnClickListener(this::signEmailAndPassword);
+        bt_loginEmail.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                signEmailAndPassword(v);
+                checkLogin();
+            }
+        });
         bt_loginGoogle.setOnClickListener(this::signGoogle);
         bt_loginFacebook.setOnClickListener(this::signFacebook);
         bt_register.setOnClickListener(this::changeRegister);
@@ -243,6 +252,20 @@ public class UserLoginManagerFragment extends BaseFragment {
         if (user != null) {
             userLocalLogin.storeUser(user);
             onChangeScreen();
+        }
+    }
+
+    public void checkLogin(){
+        try {
+            String email = et_email.getText().toString();
+            String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
+                    if (email.matches(emailPattern) && email.length() > 0) {
+                        Toast.makeText(getContext(), "valid email address", Toast.LENGTH_SHORT).show();
+                    } else {
+                        Toast.makeText(getContext(), "Invalid email address", Toast.LENGTH_SHORT).show();
+                    }
+        } catch (Exception ex){
+
         }
     }
 
