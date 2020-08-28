@@ -1595,6 +1595,9 @@ drawable com_facebook_tooltip_blue_bottomnub
 drawable com_facebook_tooltip_blue_topnub
 drawable com_facebook_tooltip_blue_xout
 drawable comic
+drawable comic_1
+drawable comic_2
+drawable comic_3
 drawable common_full_open_on_phone
 drawable common_google_signin_btn_icon_dark
 drawable common_google_signin_btn_icon_dark_focused
@@ -1997,6 +2000,7 @@ id rlHeader
 id rounded
 id row_index_key
 id rv
+id rvSearchBooks
 id rvTopViews
 id rv_book
 id rv_bookHistory
@@ -2090,6 +2094,8 @@ id transition_layout_save
 id transition_position
 id transition_scene_layoutid_cache
 id transition_transform
+id tvEnjoy
+id tvInfo
 id tvTitle
 id tvTitleTopBooks
 id tv_author
@@ -2194,6 +2200,7 @@ layout activity_comic
 layout activity_main
 layout activity_read_book
 layout activity_read_book_local
+layout activity_search_book
 layout browser_actions_context_menu_page
 layout browser_actions_context_menu_row
 layout com_facebook_activity_layout

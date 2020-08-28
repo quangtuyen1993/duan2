@@ -48,13 +48,13 @@ public class BookTypeFragment extends BaseFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        viewModel = new ViewModelProvider(requireActivity(), factory).get(BookTypeViewModel.class);
         return inflater.inflate(R.layout.fragment_book_type, container, false);
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        viewModel = new ViewModelProvider(this, factory).get(BookTypeViewModel.class);
         initRecyclerview(view);
         viewModel.getBookTypeLocal().observe(getViewLifecycleOwner(), bookTypes -> {
             setAdapter(bookTypes, getView());

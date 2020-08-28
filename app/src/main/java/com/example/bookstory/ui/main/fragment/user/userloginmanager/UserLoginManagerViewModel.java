@@ -54,11 +54,13 @@ public class UserLoginManagerViewModel extends ViewModel {
                         .subscribeWith(new DisposableObserver<UserWrapper>() {
                             @Override
                             public void onNext(UserWrapper userWrapper) {
+                                Log.e("UseViewModel",userWrapper.toString());
                                 userOAuth.postValue(userWrapper.getUser());
                             }
 
                             @Override
                             public void onError(Throwable e) {
+                                Log.e("Main",e.getMessage());
                                 isLoading.setValue(false);
                                 error.postValue(e.getMessage());
                             }

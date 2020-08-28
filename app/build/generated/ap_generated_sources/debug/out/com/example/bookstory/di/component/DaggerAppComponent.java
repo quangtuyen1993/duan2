@@ -32,6 +32,7 @@ import com.example.bookstory.di.module.ActivityBuilder_ContributesAndroidInjecti
 import com.example.bookstory.di.module.ActivityBuilder_ContributesComicActivity;
 import com.example.bookstory.di.module.ActivityBuilder_ContributesReadBookActivity;
 import com.example.bookstory.di.module.ActivityBuilder_ContributesReadBookLocalActivity;
+import com.example.bookstory.di.module.ActivityBuilder_ContributesSearchViewActivity;
 import com.example.bookstory.di.module.DBModule;
 import com.example.bookstory.di.module.DBModule_ChapterDAOFactory;
 import com.example.bookstory.di.module.DBModule_DbLocalFactory;
@@ -126,6 +127,10 @@ import com.example.bookstory.ui.readbooklocal.ReadBookLocalActivity;
 import com.example.bookstory.ui.readbooklocal.ReadBookLocalActivity_MembersInjector;
 import com.example.bookstory.ui.readbooklocal.ReadBookLocalViewModel;
 import com.example.bookstory.ui.readbooklocal.ReadBookLocalViewModel_Factory;
+import com.example.bookstory.ui.research.SearchBookActivity;
+import com.example.bookstory.ui.research.SearchBookActivity_MembersInjector;
+import com.example.bookstory.ui.research.SearchViewModel;
+import com.example.bookstory.ui.research.SearchViewModel_Factory;
 import com.example.bookstory.vo.UserLocalLogin;
 import dagger.android.AndroidInjector;
 import dagger.android.DispatchingAndroidInjector;
@@ -155,6 +160,8 @@ public final class DaggerAppComponent implements AppComponent {
   private Provider<ActivityBuilder_ContributesComicActivity.ComicActivitySubcomponent.Factory> comicActivitySubcomponentFactoryProvider;
 
   private Provider<ActivityBuilder_ContributesReadBookLocalActivity.ReadBookLocalActivitySubcomponent.Factory> readBookLocalActivitySubcomponentFactoryProvider;
+
+  private Provider<ActivityBuilder_ContributesSearchViewActivity.SearchBookActivitySubcomponent.Factory> searchBookActivitySubcomponentFactoryProvider;
 
   private Provider<Retrofit> providerRetrofitProvider;
 
@@ -202,7 +209,7 @@ public final class DaggerAppComponent implements AppComponent {
 
   private Map<Class<?>, Provider<AndroidInjector.Factory<?>>> getMapOfClassOfAndProviderOfAndroidInjectorFactoryOf(
       ) {
-    return MapBuilder.<Class<?>, Provider<AndroidInjector.Factory<?>>>newMapBuilder(5).put(MainActivity.class, (Provider) mainActivitySubcomponentFactoryProvider).put(BookTitleActivity.class, (Provider) bookTitleActivitySubcomponentFactoryProvider).put(ReadBookActivity.class, (Provider) readBookActivitySubcomponentFactoryProvider).put(ComicActivity.class, (Provider) comicActivitySubcomponentFactoryProvider).put(ReadBookLocalActivity.class, (Provider) readBookLocalActivitySubcomponentFactoryProvider).build();}
+    return MapBuilder.<Class<?>, Provider<AndroidInjector.Factory<?>>>newMapBuilder(6).put(MainActivity.class, (Provider) mainActivitySubcomponentFactoryProvider).put(BookTitleActivity.class, (Provider) bookTitleActivitySubcomponentFactoryProvider).put(ReadBookActivity.class, (Provider) readBookActivitySubcomponentFactoryProvider).put(ComicActivity.class, (Provider) comicActivitySubcomponentFactoryProvider).put(ReadBookLocalActivity.class, (Provider) readBookLocalActivitySubcomponentFactoryProvider).put(SearchBookActivity.class, (Provider) searchBookActivitySubcomponentFactoryProvider).build();}
 
   private DispatchingAndroidInjector<Object> getDispatchingAndroidInjectorOfObject() {
     return DispatchingAndroidInjector_Factory.newInstance(getMapOfClassOfAndProviderOfAndroidInjectorFactoryOf(), Collections.<String, Provider<AndroidInjector.Factory<?>>>emptyMap());}
@@ -238,6 +245,12 @@ public final class DaggerAppComponent implements AppComponent {
       public ActivityBuilder_ContributesReadBookLocalActivity.ReadBookLocalActivitySubcomponent.Factory get(
           ) {
         return new ReadBookLocalActivitySubcomponentFactory();}
+    };
+    this.searchBookActivitySubcomponentFactoryProvider = new Provider<ActivityBuilder_ContributesSearchViewActivity.SearchBookActivitySubcomponent.Factory>() {
+      @Override
+      public ActivityBuilder_ContributesSearchViewActivity.SearchBookActivitySubcomponent.Factory get(
+          ) {
+        return new SearchBookActivitySubcomponentFactory();}
     };
     this.providerRetrofitProvider = DoubleCheck.provider(NetWorkModule_ProviderRetrofitFactory.create(netWorkModuleParam));
     this.providerBookApiProvider = RemoteModule_ProviderBookApiFactory.create(remoteModuleParam, providerRetrofitProvider);
@@ -326,7 +339,7 @@ public final class DaggerAppComponent implements AppComponent {
 
     private Map<Class<?>, Provider<AndroidInjector.Factory<?>>> getMapOfClassOfAndProviderOfAndroidInjectorFactoryOf(
         ) {
-      return MapBuilder.<Class<?>, Provider<AndroidInjector.Factory<?>>>newMapBuilder(16).put(MainActivity.class, (Provider) DaggerAppComponent.this.mainActivitySubcomponentFactoryProvider).put(BookTitleActivity.class, (Provider) DaggerAppComponent.this.bookTitleActivitySubcomponentFactoryProvider).put(ReadBookActivity.class, (Provider) DaggerAppComponent.this.readBookActivitySubcomponentFactoryProvider).put(ComicActivity.class, (Provider) DaggerAppComponent.this.comicActivitySubcomponentFactoryProvider).put(ReadBookLocalActivity.class, (Provider) DaggerAppComponent.this.readBookLocalActivitySubcomponentFactoryProvider).put(HomeFragment.class, (Provider) homeFragmentSubcomponentFactoryProvider).put(BookTitleFragment.class, (Provider) bookTitleFragmentSubcomponentFactoryProvider).put(ReadBookFragment.class, (Provider) readBookFragmentSubcomponentFactoryProvider).put(ReadBookViewPager.class, (Provider) readBookViewPagerSubcomponentFactoryProvider).put(BookTypeFragment.class, (Provider) bookTypeFragmentSubcomponentFactoryProvider).put(BookTypeBookFragment.class, (Provider) bookTypeBookFragmentSubcomponentFactoryProvider).put(LoginFragment.class, (Provider) loginFragmentSubcomponentFactoryProvider).put(UserLoginManagerFragment.class, (Provider) userLoginManagerFragmentSubcomponentFactoryProvider).put(UserManagerFragment.class, (Provider) userManagerFragmentSubcomponentFactoryProvider).put(RegisterFragment.class, (Provider) registerFragmentSubcomponentFactoryProvider).put(HistoryLibraryFragment.class, (Provider) historyLibraryFragmentSubcomponentFactoryProvider).build();}
+      return MapBuilder.<Class<?>, Provider<AndroidInjector.Factory<?>>>newMapBuilder(17).put(MainActivity.class, (Provider) DaggerAppComponent.this.mainActivitySubcomponentFactoryProvider).put(BookTitleActivity.class, (Provider) DaggerAppComponent.this.bookTitleActivitySubcomponentFactoryProvider).put(ReadBookActivity.class, (Provider) DaggerAppComponent.this.readBookActivitySubcomponentFactoryProvider).put(ComicActivity.class, (Provider) DaggerAppComponent.this.comicActivitySubcomponentFactoryProvider).put(ReadBookLocalActivity.class, (Provider) DaggerAppComponent.this.readBookLocalActivitySubcomponentFactoryProvider).put(SearchBookActivity.class, (Provider) DaggerAppComponent.this.searchBookActivitySubcomponentFactoryProvider).put(HomeFragment.class, (Provider) homeFragmentSubcomponentFactoryProvider).put(BookTitleFragment.class, (Provider) bookTitleFragmentSubcomponentFactoryProvider).put(ReadBookFragment.class, (Provider) readBookFragmentSubcomponentFactoryProvider).put(ReadBookViewPager.class, (Provider) readBookViewPagerSubcomponentFactoryProvider).put(BookTypeFragment.class, (Provider) bookTypeFragmentSubcomponentFactoryProvider).put(BookTypeBookFragment.class, (Provider) bookTypeBookFragmentSubcomponentFactoryProvider).put(LoginFragment.class, (Provider) loginFragmentSubcomponentFactoryProvider).put(UserLoginManagerFragment.class, (Provider) userLoginManagerFragmentSubcomponentFactoryProvider).put(UserManagerFragment.class, (Provider) userManagerFragmentSubcomponentFactoryProvider).put(RegisterFragment.class, (Provider) registerFragmentSubcomponentFactoryProvider).put(HistoryLibraryFragment.class, (Provider) historyLibraryFragmentSubcomponentFactoryProvider).build();}
 
     private DispatchingAndroidInjector<Object> getDispatchingAndroidInjectorOfObject() {
       return DispatchingAndroidInjector_Factory.newInstance(getMapOfClassOfAndProviderOfAndroidInjectorFactoryOf(), Collections.<String, Provider<AndroidInjector.Factory<?>>>emptyMap());}
@@ -1025,6 +1038,52 @@ public final class DaggerAppComponent implements AppComponent {
     private ReadBookLocalActivity injectReadBookLocalActivity(ReadBookLocalActivity instance) {
       DaggerAppCompatActivity_MembersInjector.injectAndroidInjector(instance, DaggerAppComponent.this.getDispatchingAndroidInjectorOfObject());
       ReadBookLocalActivity_MembersInjector.injectFactory(instance, getViewModelFactory());
+      return instance;
+    }
+  }
+
+  private final class SearchBookActivitySubcomponentFactory implements ActivityBuilder_ContributesSearchViewActivity.SearchBookActivitySubcomponent.Factory {
+    @Override
+    public ActivityBuilder_ContributesSearchViewActivity.SearchBookActivitySubcomponent create(
+        SearchBookActivity arg0) {
+      Preconditions.checkNotNull(arg0);
+      return new SearchBookActivitySubcomponentImpl(arg0);
+    }
+  }
+
+  private final class SearchBookActivitySubcomponentImpl implements ActivityBuilder_ContributesSearchViewActivity.SearchBookActivitySubcomponent {
+    private Provider<BookRepository> bookRepositoryProvider;
+
+    private Provider<FeedRepository> feedRepositoryProvider;
+
+    private Provider<SearchViewModel> searchViewModelProvider;
+
+    private SearchBookActivitySubcomponentImpl(SearchBookActivity arg0) {
+
+      initialize(arg0);
+    }
+
+    private Map<Class<? extends ViewModel>, Provider<ViewModel>> getMapOfClassOfAndProviderOfViewModel(
+        ) {
+      return Collections.<Class<? extends ViewModel>, Provider<ViewModel>>singletonMap(SearchViewModel.class, (Provider) searchViewModelProvider);}
+
+    private ViewModelFactory getViewModelFactory() {
+      return new ViewModelFactory(getMapOfClassOfAndProviderOfViewModel());}
+
+    @SuppressWarnings("unchecked")
+    private void initialize(final SearchBookActivity arg0) {
+      this.bookRepositoryProvider = BookRepository_Factory.create(DaggerAppComponent.this.providerBookApiProvider, DaggerAppComponent.this.providerFeedApiProvider, DaggerAppComponent.this.providerBookDAOProvider);
+      this.feedRepositoryProvider = FeedRepository_Factory.create(DaggerAppComponent.this.providerFeedApiProvider);
+      this.searchViewModelProvider = SearchViewModel_Factory.create(bookRepositoryProvider, DaggerAppComponent.this.providerBookDAOProvider, feedRepositoryProvider);
+    }
+
+    @Override
+    public void inject(SearchBookActivity arg0) {
+      injectSearchBookActivity(arg0);}
+
+    private SearchBookActivity injectSearchBookActivity(SearchBookActivity instance) {
+      DaggerAppCompatActivity_MembersInjector.injectAndroidInjector(instance, DaggerAppComponent.this.getDispatchingAndroidInjectorOfObject());
+      SearchBookActivity_MembersInjector.injectFactory(instance, getViewModelFactory());
       return instance;
     }
   }

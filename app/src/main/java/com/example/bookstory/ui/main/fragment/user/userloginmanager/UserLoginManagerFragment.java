@@ -214,6 +214,7 @@ public class UserLoginManagerFragment extends BaseFragment {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == SIGN_IN_GOOGLE) {
             Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
+            Log.e("UserManager",task.toString());
             handleSignInResult(task);
         }
 

@@ -20,11 +20,11 @@ public class BookAdapter extends RecyclerView.Adapter<BookAdapter.ViewHolder> {
     public ItemOnClick<Book> itemOnClick;
 
     public void setBooks(List<Book> books) {
-        Log.e("Adapter",books.size()+"");
-        DiffUtil.DiffResult diffResult = DiffUtil.calculateDiff(new BookDiffUtil(this.books, books));
-        diffResult.dispatchUpdatesTo(this);
-        this.books.clear();
-        this.books.addAll(books);
+//        DiffUtil.DiffResult diffResult = DiffUtil.calculateDiff(new BookDiffUtil(this.books, books));
+//        diffResult.dispatchUpdatesTo(this);
+//        this.books.clear();
+//        this.books.addAll(books);
+        this.books=books;
         notifyDataSetChanged();
     }
 

@@ -14,7 +14,9 @@ public class FragmentUserManagerBindingImpl extends FragmentUserManagerBinding  
     static {
         sIncludes = null;
         sViewsWithIds = new android.util.SparseIntArray();
-        sViewsWithIds.put(R.id.bt_signOut, 3);
+        sViewsWithIds.put(R.id.tvEnjoy, 3);
+        sViewsWithIds.put(R.id.tvInfo, 4);
+        sViewsWithIds.put(R.id.bt_signOut, 5);
     }
     // views
     @NonNull
@@ -25,12 +27,14 @@ public class FragmentUserManagerBindingImpl extends FragmentUserManagerBinding  
     // Inverse Binding Event Handlers
 
     public FragmentUserManagerBindingImpl(@Nullable androidx.databinding.DataBindingComponent bindingComponent, @NonNull View root) {
-        this(bindingComponent, root, mapBindings(bindingComponent, root, 4, sIncludes, sViewsWithIds));
+        this(bindingComponent, root, mapBindings(bindingComponent, root, 6, sIncludes, sViewsWithIds));
     }
     private FragmentUserManagerBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 2
-            , (android.widget.Button) bindings[3]
+            , (android.widget.Button) bindings[5]
             , (android.widget.TextView) bindings[1]
+            , (android.widget.TextView) bindings[3]
+            , (android.widget.TextView) bindings[4]
             , (android.widget.TextView) bindings[2]
             );
         this.mboundView0 = (androidx.constraintlayout.widget.ConstraintLayout) bindings[0];

@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
@@ -27,6 +28,9 @@ public abstract class FragmentHomeBinding extends ViewDataBinding {
   public final ImageView ivLogo;
 
   @NonNull
+  public final ProgressBar progressBar;
+
+  @NonNull
   public final RelativeLayout rlHeader;
 
   @NonNull
@@ -45,11 +49,12 @@ public abstract class FragmentHomeBinding extends ViewDataBinding {
   protected HomeViewModel mHomeViewModel;
 
   protected FragmentHomeBinding(Object _bindingComponent, View _root, int _localFieldCount,
-      CarouselView carouselView, ImageView ivLogo, RelativeLayout rlHeader, RecyclerView rv,
-      RecyclerView rvTopViews, TextView tvTitle, TextView tvTitleTopBooks) {
+      CarouselView carouselView, ImageView ivLogo, ProgressBar progressBar, RelativeLayout rlHeader,
+      RecyclerView rv, RecyclerView rvTopViews, TextView tvTitle, TextView tvTitleTopBooks) {
     super(_bindingComponent, _root, _localFieldCount);
     this.carouselView = carouselView;
     this.ivLogo = ivLogo;
+    this.progressBar = progressBar;
     this.rlHeader = rlHeader;
     this.rv = rv;
     this.rvTopViews = rvTopViews;

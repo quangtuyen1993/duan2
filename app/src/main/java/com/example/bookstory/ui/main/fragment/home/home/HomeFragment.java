@@ -11,6 +11,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -32,7 +33,6 @@ import com.example.bookstory.ui.booktitle.BookTitleActivity;
 import com.example.bookstory.ui.research.SearchBookActivity;
 import com.example.bookstory.util.BookAdapter;
 import com.example.bookstory.vo.Book;
-import com.squareup.picasso.Picasso;
 import com.synnapps.carouselview.CarouselView;
 import com.synnapps.carouselview.ImageListener;
 
@@ -56,6 +56,7 @@ public class HomeFragment extends BaseFragment {
     private Toolbar toolbar;
     private FragmentHomeBinding binding;
     private BookAdapter bookAdapter;
+    private ProgressBar progressBar;
 
     private SearchView searchView;
     private HomeViewModel vm;
@@ -75,19 +76,18 @@ public class HomeFragment extends BaseFragment {
                              Bundle savedInstanceState) {
         binding = FragmentHomeBinding.inflate(inflater);
         return binding.getRoot();
-
-
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        initToolbar(view);
         vm = new ViewModelProvider(this, factory).get(HomeViewModel.class);
         carouselView = view.findViewById(R.id.carouselView);
-        carouselView.setPageCount(3);
-        initToolbar(view);
+        progressBar = view.findViewById(R.id.progressBar);
+
         binding.setLifecycleOwner(this);
-        binding.setHomeViewModel();
+        binding.setHomeViewModel(vm);
         binding.setLifecycleOwner(getViewLifecycleOwner());
         binding.executePendingBindings();
         int[] sampleImages = {R.drawable.comic_1, R.drawable.comic_2, R.drawable.comic_3};
@@ -100,6 +100,7 @@ public class HomeFragment extends BaseFragment {
             }
         };
         carouselView.setImageListener(imageListener);
+        carouselView.setPageCount(3);
 
         bookAdapter = new BookAdapter();
         layoutManager = new LinearLayoutManager(requireActivity(), RecyclerView.HORIZONTAL, false);
@@ -148,9 +149,9 @@ public class HomeFragment extends BaseFragment {
         });
         vm.isLoading.observe(getViewLifecycleOwner(), isLoad -> {
             if (isLoad) {
-//                binding.progress.setVisibility(View.VISIBLE);
+                progressBar.setVisibility(View.VISIBLE);
             } else {
-//                binding.progress.setVisibility(View.GONE);
+                progressBar.setVisibility(View.GONE);
             }
         });
     }

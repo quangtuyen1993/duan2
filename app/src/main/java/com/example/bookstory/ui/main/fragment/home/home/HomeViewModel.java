@@ -144,14 +144,14 @@ public class HomeViewModel extends ViewModel {
 
 
 
-    @Inject
-    HomeViewModel(BookRepository bookRepository, BookDAO bookDAO, FeedRepository feedRepository) {
-        this.bookRepository = bookRepository;
-        this.bookLocal = bookDAO;
-        this.feedRepository = feedRepository;
-        init();
+        @Inject
+        HomeViewModel(BookRepository bookRepository, BookDAO bookDAO, FeedRepository feedRepository) {
+            this.bookRepository = bookRepository;
+            this.bookLocal = bookDAO;
+            this.feedRepository = feedRepository;
+            init();
 
-    }
+        }
 
     void refresh() {
         resultSearch = new MutableLiveData<>();

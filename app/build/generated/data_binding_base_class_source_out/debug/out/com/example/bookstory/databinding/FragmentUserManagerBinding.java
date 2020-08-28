@@ -24,16 +24,24 @@ public abstract class FragmentUserManagerBinding extends ViewDataBinding {
   public final TextView tvEmail;
 
   @NonNull
+  public final TextView tvEnjoy;
+
+  @NonNull
+  public final TextView tvInfo;
+
+  @NonNull
   public final TextView tvName;
 
   @Bindable
   protected UserManagerViewModel mViewmodel;
 
   protected FragmentUserManagerBinding(Object _bindingComponent, View _root, int _localFieldCount,
-      Button btSignOut, TextView tvEmail, TextView tvName) {
+      Button btSignOut, TextView tvEmail, TextView tvEnjoy, TextView tvInfo, TextView tvName) {
     super(_bindingComponent, _root, _localFieldCount);
     this.btSignOut = btSignOut;
     this.tvEmail = tvEmail;
+    this.tvEnjoy = tvEnjoy;
+    this.tvInfo = tvInfo;
     this.tvName = tvName;
   }
 

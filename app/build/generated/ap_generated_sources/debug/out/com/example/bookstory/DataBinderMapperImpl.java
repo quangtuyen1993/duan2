@@ -9,6 +9,7 @@ import androidx.databinding.ViewDataBinding;
 import com.example.bookstory.databinding.ActivityBookTitleBindingImpl;
 import com.example.bookstory.databinding.ActivityComicBindingImpl;
 import com.example.bookstory.databinding.ActivityReadBookBindingImpl;
+import com.example.bookstory.databinding.ActivitySearchBookBindingImpl;
 import com.example.bookstory.databinding.FragmentBookTitleBindingImpl;
 import com.example.bookstory.databinding.FragmentHomeBindingImpl;
 import com.example.bookstory.databinding.FragmentRegisterBindingImpl;
@@ -33,26 +34,29 @@ public class DataBinderMapperImpl extends DataBinderMapper {
 
   private static final int LAYOUT_ACTIVITYREADBOOK = 3;
 
-  private static final int LAYOUT_FRAGMENTBOOKTITLE = 4;
+  private static final int LAYOUT_ACTIVITYSEARCHBOOK = 4;
 
-  private static final int LAYOUT_FRAGMENTHOME = 5;
+  private static final int LAYOUT_FRAGMENTBOOKTITLE = 5;
 
-  private static final int LAYOUT_FRAGMENTREGISTER = 6;
+  private static final int LAYOUT_FRAGMENTHOME = 6;
 
-  private static final int LAYOUT_FRAGMENTUSERMANAGER = 7;
+  private static final int LAYOUT_FRAGMENTREGISTER = 7;
 
-  private static final int LAYOUT_ITEMBOOK = 8;
+  private static final int LAYOUT_FRAGMENTUSERMANAGER = 8;
 
-  private static final int LAYOUT_ITEMBOOKHISTORY = 9;
+  private static final int LAYOUT_ITEMBOOK = 9;
 
-  private static final int LAYOUT_ITEMBOOKTYPE = 10;
+  private static final int LAYOUT_ITEMBOOKHISTORY = 10;
 
-  private static final SparseIntArray INTERNAL_LAYOUT_ID_LOOKUP = new SparseIntArray(10);
+  private static final int LAYOUT_ITEMBOOKTYPE = 11;
+
+  private static final SparseIntArray INTERNAL_LAYOUT_ID_LOOKUP = new SparseIntArray(11);
 
   static {
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.example.bookstory.R.layout.activity_book_title, LAYOUT_ACTIVITYBOOKTITLE);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.example.bookstory.R.layout.activity_comic, LAYOUT_ACTIVITYCOMIC);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.example.bookstory.R.layout.activity_read_book, LAYOUT_ACTIVITYREADBOOK);
+    INTERNAL_LAYOUT_ID_LOOKUP.put(com.example.bookstory.R.layout.activity_search_book, LAYOUT_ACTIVITYSEARCHBOOK);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.example.bookstory.R.layout.fragment_book_title, LAYOUT_FRAGMENTBOOKTITLE);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.example.bookstory.R.layout.fragment_home, LAYOUT_FRAGMENTHOME);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.example.bookstory.R.layout.fragment_register, LAYOUT_FRAGMENTREGISTER);
@@ -88,6 +92,12 @@ public class DataBinderMapperImpl extends DataBinderMapper {
             return new ActivityReadBookBindingImpl(component, view);
           }
           throw new IllegalArgumentException("The tag for activity_read_book is invalid. Received: " + tag);
+        }
+        case  LAYOUT_ACTIVITYSEARCHBOOK: {
+          if ("layout/activity_search_book_0".equals(tag)) {
+            return new ActivitySearchBookBindingImpl(component, view);
+          }
+          throw new IllegalArgumentException("The tag for activity_search_book is invalid. Received: " + tag);
         }
         case  LAYOUT_FRAGMENTBOOKTITLE: {
           if ("layout/fragment_book_title_0".equals(tag)) {
@@ -191,12 +201,13 @@ public class DataBinderMapperImpl extends DataBinderMapper {
   }
 
   private static class InnerLayoutIdLookup {
-    static final HashMap<String, Integer> sKeys = new HashMap<String, Integer>(10);
+    static final HashMap<String, Integer> sKeys = new HashMap<String, Integer>(11);
 
     static {
       sKeys.put("layout/activity_book_title_0", com.example.bookstory.R.layout.activity_book_title);
       sKeys.put("layout/activity_comic_0", com.example.bookstory.R.layout.activity_comic);
       sKeys.put("layout/activity_read_book_0", com.example.bookstory.R.layout.activity_read_book);
+      sKeys.put("layout/activity_search_book_0", com.example.bookstory.R.layout.activity_search_book);
       sKeys.put("layout/fragment_book_title_0", com.example.bookstory.R.layout.fragment_book_title);
       sKeys.put("layout/fragment_home_0", com.example.bookstory.R.layout.fragment_home);
       sKeys.put("layout/fragment_register_0", com.example.bookstory.R.layout.fragment_register);

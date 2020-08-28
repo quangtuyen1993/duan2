@@ -11,6 +11,9 @@ import com.example.bookstory.ui.readbook.ReadBookActivity;
 import com.example.bookstory.ui.readbook.ReadBookModule;
 import com.example.bookstory.ui.readbooklocal.ReadBookLocalActivity;
 import com.example.bookstory.ui.readbooklocal.ReadBookLocalModule;
+import com.example.bookstory.ui.research.SearchBookActivity;
+import com.example.bookstory.ui.research.SearchModule;
+import com.example.bookstory.ui.research.SearchViewModel;
 
 import dagger.Module;
 import dagger.android.ContributesAndroidInjector;
@@ -37,4 +40,8 @@ public abstract class ActivityBuilder {
     @ActivityScope
     @ContributesAndroidInjector(modules = {ReadBookLocalModule.class})
     abstract ReadBookLocalActivity contributesReadBookLocalActivity();
+
+    @ActivityScope
+    @ContributesAndroidInjector(modules = {SearchModule.class})
+    abstract SearchBookActivity contributesSearchViewActivity();
 }

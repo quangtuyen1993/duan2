@@ -21,6 +21,7 @@ public class FragmentHomeBindingImpl extends FragmentHomeBinding  {
         sViewsWithIds.put(R.id.rv, 5);
         sViewsWithIds.put(R.id.tvTitleTopBooks, 6);
         sViewsWithIds.put(R.id.rvTopViews, 7);
+        sViewsWithIds.put(R.id.progressBar, 8);
     }
     // views
     @NonNull
@@ -31,12 +32,13 @@ public class FragmentHomeBindingImpl extends FragmentHomeBinding  {
     // Inverse Binding Event Handlers
 
     public FragmentHomeBindingImpl(@Nullable androidx.databinding.DataBindingComponent bindingComponent, @NonNull View root) {
-        this(bindingComponent, root, mapBindings(bindingComponent, root, 8, sIncludes, sViewsWithIds));
+        this(bindingComponent, root, mapBindings(bindingComponent, root, 9, sIncludes, sViewsWithIds));
     }
     private FragmentHomeBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 0
             , (com.synnapps.carouselview.CarouselView) bindings[3]
             , (android.widget.ImageView) bindings[2]
+            , (android.widget.ProgressBar) bindings[8]
             , (android.widget.RelativeLayout) bindings[1]
             , (androidx.recyclerview.widget.RecyclerView) bindings[5]
             , (androidx.recyclerview.widget.RecyclerView) bindings[7]
